@@ -23,8 +23,8 @@ const Register = () =>
 
     try {
       const response = await axios.post( 'http://localhost:8000/api/v1/register/', userData );
-      console.log( "response.data===>", response.data );
-      console.log( "Registration successful" );
+      // console.log( "response.data===>", response.data );
+      // console.log( "Registration successful" );
       setErrors({})
       setSuccess(true)
     } catch ( error ) {

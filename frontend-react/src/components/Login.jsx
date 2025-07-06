@@ -22,15 +22,14 @@ const Login = () => {
     e.preventDefault();
     setLoading(true)
     const userData = {username, password}
-    console.log(userData);
+    // console.log(userData);
 
     try{
       const resposne = await axios.post('http://localhost:8000/api/v1/token/', userData)
       localStorage.setItem('accessToken', resposne.data.access)
       localStorage.setItem('refreshToken', resposne.data.refresh)
-      console.log('Login successful');
       setIsLoggedIn(true)
-      navigate('/')
+      navigate('/dashboard')
     } catch (error) {
       setError('Invalid credentials')
     }
